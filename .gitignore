@@ -1,0 +1,23 @@
+# Eclipse-specific
+.settings/
+.project
+.classpath
+.metadata
+
+# Compiled files
+bin/
+target/
+*.class
+
+# Logs
+*.log
+
+# IDE metadata
+*.swp
+
+# Environment files
+.env
+
+# OS-specific
+.DS_Store
+Thumbs.db
