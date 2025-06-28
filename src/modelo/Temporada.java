@@ -1,4 +1,4 @@
-package uni1a;
+package modelo;
 
 public class Temporada {
     private int numero;

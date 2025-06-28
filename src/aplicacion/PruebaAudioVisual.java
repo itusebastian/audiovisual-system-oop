@@ -1,5 +1,5 @@
-package poo;
-import uni1a.*;
+package aplicacion;
+import modelo.*;
 
 public class PruebaAudioVisual {
 	public static void main(String[] args) {

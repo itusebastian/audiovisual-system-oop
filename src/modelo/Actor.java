@@ -1,4 +1,4 @@
-package uni1a;
+package modelo;
 
 public class Actor {
     private String nombre;
