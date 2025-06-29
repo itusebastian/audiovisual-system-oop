@@ -29,7 +29,16 @@ public class PruebaAudioVisual {
         Documental documental2 = new Documental("Nuestro Planeta", 50, "Naturaleza", "Ecosistemas");
         documental2.agregarInvestigador(new Investigador("David Attenborough", "Biología"));
 
-        ContenidoAudiovisual[] contenidos = new ContenidoAudiovisual[] {pelicula, pelicula2, serie, serie2, documental, documental2};
+        VideoMusical videoMusical = new VideoMusical("Thriller", 14, "Pop", "Michael Jackson", "Thriller", "John Landis");
+        VideoMusical videoMusical2 = new VideoMusical("Bad Guy", 4, "Pop", "Billie Eilish", "When We All Fall Asleep, Where Do We Go?", "Dave Meyers");
+
+        Podcast podcast = new Podcast("Entrelíneas", 60, "Cultura", "Juan Pérez", 25, "Literatura");
+        Podcast podcast2 = new Podcast("Ciencia al Día", 45, "Ciencia", "Ana Torres", 40, "Divulgación científica");
+
+        ContenidoAudiovisual[] contenidos = new ContenidoAudiovisual[] {
+            pelicula, pelicula2, serie, serie2, documental, documental2,
+            videoMusical, videoMusical2, podcast, podcast2
+        };
 
         // Mostrar los detalles de cada contenido audiovisual
         for (ContenidoAudiovisual contenido : contenidos) {
