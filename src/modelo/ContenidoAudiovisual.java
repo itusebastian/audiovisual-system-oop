@@ -1,6 +1,6 @@
 package modelo;
 
-public abstract class ContenidoAudiovisual {
+public abstract class ContenidoAudiovisual implements Mostrable {
     private static int contar = 0;
     private String titulo;
     private int duracionEnMinutos;
@@ -45,6 +45,4 @@ public abstract class ContenidoAudiovisual {
     public int getId() {
         return id;
     }
-    
-    public abstract void mostrarDetalles();
 }

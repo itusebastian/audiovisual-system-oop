@@ -1,6 +1,6 @@
 package modelo;
 
-public class Temporada {
+public class Temporada implements Mostrable {
     private int numero;
     private int cantidadEpisodios;
 
@@ -25,6 +25,7 @@ public class Temporada {
         this.cantidadEpisodios = cantidadEpisodios;
     }
 
+    @Override
     public void mostrarDetalles() {
         System.out.println("Temporada " + numero + ": " + cantidadEpisodios + " episodios");
     }

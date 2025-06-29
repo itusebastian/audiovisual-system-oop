@@ -1,6 +1,6 @@
 package modelo;
 
-public class Actor {
+public class Actor implements Mostrable {
     private String nombre;
     private int edad;
     private String nacionalidad;
@@ -35,6 +35,7 @@ public class Actor {
         this.nacionalidad = nacionalidad;
     }
 
+    @Override
     public void mostrarDetalles() {
         System.out.println("Actor: " + nombre + ", Edad: " + edad + ", Nacionalidad: " + nacionalidad);
     }

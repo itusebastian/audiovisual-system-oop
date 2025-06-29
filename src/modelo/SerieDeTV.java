@@ -31,7 +31,7 @@ public class SerieDeTV extends ContenidoAudiovisual {
         System.out.println("Duración en minutos: " + getDuracionEnMinutos());
         System.out.println("Género: " + getGenero());
         System.out.println("Temporadas: " + temporadas.size());
-        for (Temporada t : temporadas) {
+        for (Mostrable t : temporadas) {
             t.mostrarDetalles();
         }
         System.out.println();

@@ -1,6 +1,6 @@
 package modelo;
 
-public class Investigador {
+public class Investigador implements Mostrable {
     private String nombre;
     private String especialidad;
 
@@ -25,6 +25,7 @@ public class Investigador {
         this.especialidad = especialidad;
     }
 
+    @Override
     public void mostrarDetalles() {
         System.out.println("Investigador: " + nombre + ", Especialidad: " + especialidad);
     }

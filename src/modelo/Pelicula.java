@@ -38,7 +38,7 @@ public class Pelicula extends ContenidoAudiovisual {
             System.out.println("No hay actores registrados para esta película.");
         } else {
             System.out.println("Actores:");
-            for (Actor actor : actores) {
+            for (Mostrable actor : actores) {
                 actor.mostrarDetalles();
             }
         }
