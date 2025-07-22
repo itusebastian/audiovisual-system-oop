@@ -1,7 +1,9 @@
 package com.itulabs.aplicacion;
 
+import com.itulabs.controlador.AudioVisualController;
 import com.itulabs.modelo.*;
-import com.itulabs.presentacion.*;
+import com.itulabs.vista.ConsolaVistaAudioVisual;
+import com.itulabs.vista.VistaAudioVisual;
 
 public class PruebaAudioVisual {
     public static void main(String[] args) {
@@ -37,33 +39,13 @@ public class PruebaAudioVisual {
         Podcast podcast = new Podcast("Entrelíneas", 60, "Cultura", "Juan Pérez", 25, "Literatura");
         Podcast podcast2 = new Podcast("Ciencia al Día", 45, "Ciencia", "Ana Torres", 40, "Divulgación científica");
 
-        // Presentadores
-        DetallePresenter<Actor> actorPresenter = new ActorConsolePresenter();
-        DetallePresenter<Pelicula> peliculaPresenter = new PeliculaConsolePresenter(actorPresenter);
-        DetallePresenter<Temporada> temporadaPresenter = new TemporadaConsolePresenter();
-        DetallePresenter<SerieDeTV> seriePresenter = new SerieDeTVConsolePresenter(temporadaPresenter);
-        DetallePresenter<Investigador> investigadorPresenter = new InvestigadorConsolePresenter();
-        DetallePresenter<Documental> documentalPresenter = new DocumentalConsolePresenter(investigadorPresenter);
-        DetallePresenter<VideoMusical> videoMusicalPresenter = new VideoMusicalConsolePresenter();
-        DetallePresenter<Podcast> podcastPresenter = new PodcastConsolePresenter();
-
-        Object[] contenidos = new Object[] {
+        ContenidoAudiovisual[] contenidos = new ContenidoAudiovisual[] {
             pelicula, pelicula2, serie, serie2, documental, documental2,
             videoMusical, videoMusical2, podcast, podcast2
         };
 
-        for (Object contenido : contenidos) {
-            if (contenido instanceof Pelicula) {
-                peliculaPresenter.mostrarDetalles((Pelicula) contenido);
-            } else if (contenido instanceof SerieDeTV) {
-                seriePresenter.mostrarDetalles((SerieDeTV) contenido);
-            } else if (contenido instanceof Documental) {
-                documentalPresenter.mostrarDetalles((Documental) contenido);
-            } else if (contenido instanceof VideoMusical) {
-                videoMusicalPresenter.mostrarDetalles((VideoMusical) contenido);
-            } else if (contenido instanceof Podcast) {
-                podcastPresenter.mostrarDetalles((Podcast) contenido);
-            }
-        }
+        VistaAudioVisual vista = new ConsolaVistaAudioVisual();
+        AudioVisualController controlador = new AudioVisualController(vista);
+        controlador.mostrarContenidos(contenidos);
     }
 }
