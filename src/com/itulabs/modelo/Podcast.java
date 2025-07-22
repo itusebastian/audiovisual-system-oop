@@ -36,16 +36,5 @@ public class Podcast extends ContenidoAudiovisual {
         this.tematica = tematica;
     }
 
-    @Override
-    public void mostrarDetalles() {
-        System.out.println("Detalles del podcast:");
-        System.out.println("ID: " + getId());
-        System.out.println("Título: " + getTitulo());
-        System.out.println("Duración en minutos: " + getDuracionEnMinutos());
-        System.out.println("Género: " + getGenero());
-        System.out.println("Anfitrión: " + anfitrion);
-        System.out.println("Cantidad de episodios: " + cantidadEpisodios);
-        System.out.println("Temática: " + tematica);
-        System.out.println();
-    }
+    // Método mostrarDetalles eliminado. Usar un DetallePresenter para mostrar detalles.
 }

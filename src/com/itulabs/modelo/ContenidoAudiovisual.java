@@ -1,6 +1,6 @@
 package com.itulabs.modelo;
 
-public abstract class ContenidoAudiovisual implements Mostrable {
+public abstract class ContenidoAudiovisual {
     private static int contar = 0;
     private String titulo;
     private int duracionEnMinutos;

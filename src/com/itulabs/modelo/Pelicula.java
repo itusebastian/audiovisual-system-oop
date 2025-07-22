@@ -33,26 +33,8 @@ public class Pelicula extends ContenidoAudiovisual {
         this.actores.add(actor);
     }
 
-    public void mostrarActores() {
-        if (actores.isEmpty()) {
-            System.out.println("No hay actores registrados para esta película.");
-        } else {
-            System.out.println("Actores:");
-            for (Mostrable actor : actores) {
-                actor.mostrarDetalles();
-            }
-        }
-    }
+    // Método mostrarActores eliminado. Usar un DetallePresenter para mostrar detalles de actores.
     
     @Override
-    public void mostrarDetalles() {
-        System.out.println("Detalles de la película:");
-        System.out.println("ID: " + getId());
-        System.out.println("Título: " + getTitulo());
-        System.out.println("Duración en minutos: " + getDuracionEnMinutos());
-        System.out.println("Género: " + getGenero());
-        System.out.println("Estudio: " + estudio);
-        mostrarActores();
-        System.out.println();
-    }
+    // Método mostrarDetalles eliminado. Usar un DetallePresenter para mostrar detalles.
 }

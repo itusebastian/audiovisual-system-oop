@@ -23,17 +23,5 @@ public class SerieDeTV extends ContenidoAudiovisual {
         return temporadas;
     }
 
-    @Override
-    public void mostrarDetalles() {
-        System.out.println("Detalles de la serie de TV:");
-        System.out.println("ID: " + getId());
-        System.out.println("Título: " + getTitulo());
-        System.out.println("Duración en minutos: " + getDuracionEnMinutos());
-        System.out.println("Género: " + getGenero());
-        System.out.println("Temporadas: " + temporadas.size());
-        for (Mostrable t : temporadas) {
-            t.mostrarDetalles();
-        }
-        System.out.println();
-    }
+    // Método mostrarDetalles eliminado. Usar un DetallePresenter para mostrar detalles.
 }

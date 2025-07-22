@@ -1,6 +1,6 @@
 package com.itulabs.modelo;
 
-public class Temporada implements Mostrable {
+public class Temporada {
     private int numero;
     private int cantidadEpisodios;
 
@@ -25,8 +25,5 @@ public class Temporada implements Mostrable {
         this.cantidadEpisodios = cantidadEpisodios;
     }
 
-    @Override
-    public void mostrarDetalles() {
-        System.out.println("Temporada " + numero + ": " + cantidadEpisodios + " episodios");
-    }
+    // Método mostrarDetalles eliminado. Usar un DetallePresenter para mostrar detalles.
 }

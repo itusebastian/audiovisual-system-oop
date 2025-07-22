@@ -1,6 +1,6 @@
 package com.itulabs.modelo;
 
-public class Investigador implements Mostrable {
+public class Investigador {
     private String nombre;
     private String especialidad;
 
@@ -25,8 +25,5 @@ public class Investigador implements Mostrable {
         this.especialidad = especialidad;
     }
 
-    @Override
-    public void mostrarDetalles() {
-        System.out.println("Investigador: " + nombre + ", Especialidad: " + especialidad);
-    }
+    // Método mostrarDetalles eliminado. Usar un DetallePresenter para mostrar detalles.
 }

@@ -13,17 +13,7 @@ public class VideoMusical extends ContenidoAudiovisual {
     }
 
     public String getArtista() {
-        return artista;
-    }
-
-    public void setArtista(String artista) {
-        this.artista = artista;
-    }
-
-    public String getAlbum() {
-        return album;
-    }
-
+    // Método mostrarDetalles eliminado. Usar un DetallePresenter para mostrar detalles.
     public void setAlbum(String album) {
         this.album = album;
     }
