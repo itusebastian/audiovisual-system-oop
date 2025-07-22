@@ -4,6 +4,7 @@ import com.itulabs.controlador.AudioVisualController;
 import com.itulabs.modelo.*;
 import com.itulabs.vista.ConsolaVistaAudioVisual;
 import com.itulabs.vista.VistaAudioVisual;
+import com.itulabs.util.*;
 
 public class PruebaAudioVisual {
     public static void main(String[] args) {
@@ -33,19 +34,36 @@ public class PruebaAudioVisual {
         Documental documental2 = new Documental("Nuestro Planeta", 50, "Naturaleza", "Ecosistemas");
         documental2.agregarInvestigador(new Investigador("David Attenborough", "Biología"));
 
-        VideoMusical videoMusical = new VideoMusical("Thriller", 14, "Pop", "Michael Jackson", "Thriller", "John Landis");
-        VideoMusical videoMusical2 = new VideoMusical("Bad Guy", 4, "Pop", "Billie Eilish", "When We All Fall Asleep, Where Do We Go?", "Dave Meyers");
+        // Guardar películas en CSV
+        try {
+            ActorCsvAdapter actorAdapter = new ActorCsvAdapter();
+            PeliculaCsvAdapter peliculaAdapter = new PeliculaCsvAdapter(actorAdapter);
+            PeliculaCsvService peliculaService = new PeliculaCsvService(peliculaAdapter);
+            peliculaService.escribirEnArchivo("peliculas.csv", java.util.Arrays.asList(pelicula, pelicula2));
+        } catch (Exception e) {
+            System.err.println("Error guardando películas: " + e.getMessage());
+        }
 
-        Podcast podcast = new Podcast("Entrelíneas", 60, "Cultura", "Juan Pérez", 25, "Literatura");
-        Podcast podcast2 = new Podcast("Ciencia al Día", 45, "Ciencia", "Ana Torres", 40, "Divulgación científica");
+        // Guardar series en CSV
+        try {
+            TemporadaCsvAdapter temporadaAdapter = new TemporadaCsvAdapter();
+            SerieDeTVCsvAdapter serieAdapter = new SerieDeTVCsvAdapter(temporadaAdapter);
+            SerieDeTVCsvService serieService = new SerieDeTVCsvService(serieAdapter);
+            serieService.escribirEnArchivo("series.csv", java.util.Arrays.asList(serie, serie2));
+        } catch (Exception e) {
+            System.err.println("Error guardando series: " + e.getMessage());
+        }
 
-        ContenidoAudiovisual[] contenidos = new ContenidoAudiovisual[] {
-            pelicula, pelicula2, serie, serie2, documental, documental2,
-            videoMusical, videoMusical2, podcast, podcast2
-        };
+        // Guardar documentales en CSV
+        try {
+            InvestigadorCsvAdapter investigadorAdapter = new InvestigadorCsvAdapter();
+            DocumentalCsvAdapter documentalAdapter = new DocumentalCsvAdapter(investigadorAdapter);
+            DocumentalCsvService documentalService = new DocumentalCsvService(documentalAdapter);
+            documentalService.escribirEnArchivo("documentales.csv", java.util.Arrays.asList(documental, documental2));
+        } catch (Exception e) {
+            System.err.println("Error guardando documentales: " + e.getMessage());
+        }
 
-        VistaAudioVisual vista = new ConsolaVistaAudioVisual();
-        AudioVisualController controlador = new AudioVisualController(vista);
-        controlador.mostrarContenidos(contenidos);
+        // ...puedes agregar lógica similar para actores, temporadas, etc. si lo deseas...
     }
 }
