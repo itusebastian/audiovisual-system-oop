@@ -34,7 +34,6 @@ public class Pelicula extends ContenidoAudiovisual {
     }
 
     // Método mostrarActores eliminado. Usar un DetallePresenter para mostrar detalles de actores.
-    
-    @Override
+
     // Método mostrarDetalles eliminado. Usar un DetallePresenter para mostrar detalles.
 }

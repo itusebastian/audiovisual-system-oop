@@ -26,16 +26,6 @@ public class VideoMusical extends ContenidoAudiovisual {
         this.director = director;
     }
 
-    @Override
-    public void mostrarDetalles() {
-        System.out.println("Detalles del video musical:");
-        System.out.println("ID: " + getId());
-        System.out.println("Título: " + getTitulo());
-        System.out.println("Duración en minutos: " + getDuracionEnMinutos());
-        System.out.println("Género: " + getGenero());
-        System.out.println("Artista: " + artista);
-        System.out.println("Álbum: " + album);
-        System.out.println("Director: " + director);
-        System.out.println();
-    }
+    // Método mostrarDetalles eliminado. Usar un DetallePresenter para mostrar detalles.
+
 }
