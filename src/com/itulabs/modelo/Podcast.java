@@ -1,4 +1,4 @@
-package modelo;
+package com.itulabs.modelo;
 
 public class Podcast extends ContenidoAudiovisual {
     private String anfitrion;

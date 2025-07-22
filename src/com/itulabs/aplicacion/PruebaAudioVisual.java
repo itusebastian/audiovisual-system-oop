@@ -1,5 +1,6 @@
-package aplicacion;
-import modelo.*;
+package com.itulabs.aplicacion;
+
+import com.itulabs.modelo.*;
 
 public class PruebaAudioVisual {
 	public static void main(String[] args) {

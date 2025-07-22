@@ -1,4 +1,4 @@
-package modelo;
+package com.itulabs.modelo;
 
 public class VideoMusical extends ContenidoAudiovisual {
     private String artista;

@@ -1,7 +1,7 @@
 /**
  * Class Documental
  */
-package modelo;
+package com.itulabs.modelo;
 
 import java.util.ArrayList;
 import java.util.List;

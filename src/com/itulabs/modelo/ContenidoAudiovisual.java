@@ -1,4 +1,4 @@
-package modelo;
+package com.itulabs.modelo;
 
 public abstract class ContenidoAudiovisual implements Mostrable {
     private static int contar = 0;

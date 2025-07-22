@@ -1,4 +1,4 @@
-package modelo;
+package com.itulabs.modelo;
 
 public class Actor implements Mostrable {
     private String nombre;

@@ -1,4 +1,4 @@
-package modelo;
+package com.itulabs.modelo;
 
 public class Temporada implements Mostrable {
     private int numero;
