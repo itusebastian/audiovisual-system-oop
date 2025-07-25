@@ -21,12 +21,25 @@ Facilita la organización, consulta y extensión de información sobre contenido
 - Permitir la extensión sencilla del sistema con nuevos tipos de contenido.
 - Proveer una base para futuras aplicaciones de gestión, consulta o visualización de datos audiovisuales.
 
-## Clases y Funcionalidades Nuevas
+## Cambios Recientes y Funcionalidades Nuevas
 
-- `VideoMusical`: Permite gestionar videos musicales, con atributos de artista, álbum y director.
-- `Podcast`: Permite gestionar podcasts, con atributos de anfitrión, cantidad de episodios y temática.
-- Interfaz `Mostrable`: Unifica la forma de mostrar detalles de cualquier entidad.
-- Métodos de asociación y consulta en todas las clases principales.
+- Implementación del patrón MVC para la presentación de contenidos audiovisuales.
+- Adaptadores y servicios para la carga de datos desde archivos CSV (películas, series, documentales, etc.).
+- Pruebas unitarias para las clases principales del modelo.
+- Refactorización de la lógica de presentación usando clases `Presenter` especializadas.
+- Agregado de diagramas UML y de clases actualizados.
+- Mejoras en la organización del código y la extensibilidad del sistema.
+- Nuevas clases: `VideoMusical` (gestión de videos musicales), `Podcast` (gestión de podcasts), interfaz `Mostrable` (unificación de presentación), y métodos de asociación y consulta en todas las clases principales.
+
+## Estructura del Código
+
+- `src/com/itulabs/modelo/`: Clases del dominio (Película, SerieDeTV, Documental, etc.).
+- `src/com/itulabs/presentacion/`: Presenters para mostrar detalles en consola.
+- `src/com/itulabs/controlador/`: Controladores para la lógica de negocio.
+- `src/com/itulabs/vista/`: Vistas para la interacción con el usuario.
+- `src/com/itulabs/util/`: Adaptadores y servicios para manejo de archivos CSV.
+- `src/com/itulabs/aplicacion/PruebaAudioVisual.java`: Clase principal de ejemplo.
+- `src/test/com/itulabs/`: Pruebas unitarias.
 
 ## Instrucciones de Instalación y Uso
 
@@ -47,16 +60,38 @@ git clone https://github.com/itusebastian/audiovisual-system-oop.git
 - Ejecuta la clase principal:
   - Haz clic derecho sobre `PruebaAudioVisual.java` (en el paquete `aplicacion`) y selecciona `Run as > Java Application`.
 
+**Alternativa desde terminal:**
+
+```bash
+javac -d bin src/com/itulabs/aplicacion/PruebaAudioVisual.java
+java -cp bin com.itulabs.aplicacion.PruebaAudioVisual
+```
+
 ### 4. Ejemplo de uso
 
 Al ejecutar la aplicación, se mostrarán en consola los detalles de varias películas, series, documentales, videos musicales y podcasts de ejemplo.
 
+### 5. Ejecutar pruebas unitarias
+
+Si tienes JUnit configurado en tu IDE:
+
+- Haz clic derecho sobre la carpeta `test` y selecciona `Run as > JUnit Test`.
+
+Desde terminal (requiere JUnit en el classpath):
+
+```bash
+javac -cp .:ruta/junit-4.13.2.jar -d bin src/test/com/itulabs/modelo/*.java
+java -cp .:bin:ruta/junit-4.13.2.jar org.junit.runner.JUnitCore com.itulabs.modelo.ActorTest
+```
+
+Reemplaza `ruta/junit-4.13.2.jar` por la ruta donde tengas JUnit.
+
 ## Mejoras Adicionales
 
-- Código optimizado y organizado en paquetes descriptivos (`modelo`, `aplicacion`).
-- Uso de interfaz para facilitar la extensibilidad.
-- Ejemplo de pruebas de uso en la clase principal.
-- Preparado para agregar pruebas unitarias y nuevas funcionalidades fácilmente.
+- Código optimizado y organizado en paquetes descriptivos.
+- Uso de interfaces y patrón MVC para facilitar la extensibilidad.
+- Ejemplo de pruebas de uso y pruebas unitarias incluidas.
+- Preparado para agregar nuevas funcionalidades fácilmente.
 
 ---
 
